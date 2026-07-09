@@ -27,6 +27,9 @@ Route::prefix('api')->group(function () {
     // Fitur Logout
         Route::post('/logout', [AuthController::class, 'logout']);
 
+        // Fitur Edit Profil User & Admin
+        Route::put('/profile/update', [AuthController::class, 'updateProfile']);
+
     });
 
 });
