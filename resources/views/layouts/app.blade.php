@@ -104,17 +104,14 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-[#0c2340] text-gray-400 text-xs py-12 mt-20 border-t-8 border-gray-900">
-        <div class="container mx-auto px-4 max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="space-y-3">
-                <h4 class="text-white font-serif font-bold text-lg">Di<span class="text-red-500">info</span></h4>
-                <p class="leading-relaxed text-gray-400">Portal berita digital modern berbasis RESTful API Laravel 12.</p>
-            </div>
-            <div></div>
-            <div class="md:text-right space-y-2">
-                <p class="font-bold text-gray-300">Tim Developer UAS Kelompok</p>
-                <p class="pt-4 text-[11px] text-gray-600">&copy; 2026 Diinfo. All Rights Reserved.</p>
-            </div>
+        <footer class="bg-[#0c2340] text-gray-400 text-xs py-12 mt-20 border-t-8 border-gray-900">
+            <div class="container mx-auto px-4 max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-3">
+                    <h4 class="text-white font-serif font-bold text-lg">Di<span class="text-red-500">info</span></h4>
+                    <p class="leading-relaxed text-gray-400">Diinfo – Sumber informasi terpercaya yang menghadirkan berita terbaru, aktual, dan relevan untuk menemani Anda mengikuti perkembangan setiap hari.</p>
+                    <p class="pt-4 text-[11px] text-gray-600">&copy; 2026 Diinfo. All Rights Reserved.</p>
+                </div>
+                <div></div>
         </div>
     </footer>
 
