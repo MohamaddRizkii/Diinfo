@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\DashboardController;
 
@@ -15,6 +16,7 @@ Route::get('/register', function () { return view('auth.register'); });
 // Halaman Khusus UI Tampilan Admin
 Route::get('/admin/dashboard', function () { return view('admin.dashboard'); });
 Route::get('/admin/news', function () { return view('admin.news-manage'); });
+Route::get('/admin/categories', function () { return view('admin.categories-manage'); });
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +29,20 @@ Route::prefix('api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
 
+    // Rute Kategori (Melihat Daftar & Detail Kategori)
+    Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/categories/{id}', [CategoryController::class, 'show']);
+
     // 2. RUTE PRIVAT (Wajib login & membawa token manual lewat HTTP Header)
     Route::middleware(['manual.auth'])->group(function () {
 
     // Fitur Logout
         Route::post('/logout', [AuthController::class, 'logout']);
+
+        // Kelola Kategori (Hanya Admin - Dicek di Controller)
+        Route::post('/categories', [CategoryController::class, 'store']);
+        Route::put('/categories/{id}', [CategoryController::class, 'update']);
+        Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
 
         // Kelola Berita (Hanya Admin - Dicek di Controller)
         Route::post('/news', [NewsController::class, 'store']);
