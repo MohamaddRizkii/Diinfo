@@ -34,7 +34,6 @@
     <div class="bg-gray-100 border-b border-gray-200 text-[11px] text-gray-600 py-2">
         <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
             <span id="current-date" class="font-medium uppercase tracking-wider"></span>
-            <span class="font-semibold text-blue-900 tracking-wide hidden sm:inline">UAS PROJECT - FULLSTACK BACKEND API</span>
         </div>
     </div>
 
