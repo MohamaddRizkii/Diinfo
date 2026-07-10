@@ -24,7 +24,6 @@ Route::get('/admin/dashboard', function () { return view('admin.dashboard'); });
 Route::get('/admin/news', function () { return view('admin.news-manage'); });
 Route::get('/admin/categories', function () { return view('admin.categories-manage'); });
 
-
 /*
 |--------------------------------------------------------------------------
 | RUTE BACKEND API (Prefix: /api)
@@ -43,7 +42,6 @@ Route::prefix('api')->group(function () {
     // Rute Berita (Melihat Feed Berita & Detail Baca Berita)
     Route::get('/news', [NewsController::class, 'index']);
     Route::get('/news/{id}', [NewsController::class, 'show']);
-
 
     // 2. RUTE PRIVAT (Wajib login & membawa token manual lewat HTTP Header)
     Route::middleware(['manual.auth'])->group(function () {
