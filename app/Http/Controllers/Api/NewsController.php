@@ -32,8 +32,12 @@ class NewsController extends Controller
             });
         }
 
-        // Urutkan dari berita terbaru, batasi 6 berita per halaman (Pagination)
-        $news = $query->latest()->paginate(6);
+        // UBAHAN: Jika ada parameter 'all', tampilkan limit besar (semua berita) untuk admin
+            if ($request->has('all')) {
+                $news = $query->latest()->paginate(1000); 
+            } else {
+                $news = $query->latest()->paginate(7); // Untuk halaman depan pembaca tetap 8
+            }
 
         return response()->json([
             'status' => 'success',

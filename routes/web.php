@@ -4,14 +4,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+|--------------------------------------------------------------------------
+| RUTE FRONTEND / TAMPILAN WEB (Tempat Mengakses Halaman HTML/Blade)
+|--------------------------------------------------------------------------
+*/
+Route::get('/', function () { 
+    return view('home'); // UBAHAN: Sudah diganti dari 'welcome' ke 'home'
 });
-
 Route::get('/login', function () { return view('auth.login'); });
 Route::get('/register', function () { return view('auth.register'); });
+Route::get('/news/{id}', function ($id) { return view('news-detail', ['id' => $id]); });
 
 // Halaman Khusus UI Tampilan Admin
 Route::get('/admin/dashboard', function () { return view('admin.dashboard'); });
@@ -24,7 +30,7 @@ Route::get('/admin/categories', function () { return view('admin.categories-mana
 |--------------------------------------------------------------------------
 */
 Route::prefix('api')->group(function () {
-
+    
     // 1. RUTE PUBLIK (Bisa diakses siapa saja tanpa login)
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
@@ -33,10 +39,14 @@ Route::prefix('api')->group(function () {
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
+    // Rute Berita (Melihat Feed Berita & Detail Baca Berita)
+    Route::get('/news', [NewsController::class, 'index']);
+    Route::get('/news/{id}', [NewsController::class, 'show']);
+
     // 2. RUTE PRIVAT (Wajib login & membawa token manual lewat HTTP Header)
     Route::middleware(['manual.auth'])->group(function () {
-
-    // Fitur Logout
+        
+        // Fitur Logout
         Route::post('/logout', [AuthController::class, 'logout']);
 
         // Kelola Kategori (Hanya Admin - Dicek di Controller)
@@ -49,12 +59,16 @@ Route::prefix('api')->group(function () {
         Route::post('/news/{id}', [NewsController::class, 'update']); // Menggunakan POST untuk menghindari bug upload file PHP
         Route::delete('/news/{id}', [NewsController::class, 'destroy']);
 
+        // Kelola Komentar
+        Route::post('/comments', [CommentController::class, 'store']); // Bisa Admin & User Biasa (Wajib Login)
+        Route::delete('/comments/{id}', [CommentController::class, 'destroy']); // Hanya Admin untuk moderasi
+
         // Dashboard Statistik
         Route::get('/dashboard', [DashboardController::class, 'index']); // Hanya Admin
 
         // Fitur Edit Profil User & Admin
         Route::put('/profile/update', [AuthController::class, 'updateProfile']);
-
+        
     });
 
 });

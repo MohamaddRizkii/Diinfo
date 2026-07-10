@@ -75,7 +75,7 @@
     }
 
     function loadAdminNews() {
-        fetch('/api/news').then(res => res.json()).then(response => {
+        fetch('/api/news?all=1').then(res => res.json()).then(response => {
             const tbody = document.getElementById('news-table-body');
             tbody.innerHTML = '';
             if(response.status === 'success' && response.data.data.length > 0) {
