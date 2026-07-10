@@ -25,7 +25,6 @@ Route::get('/admin/dashboard', function () { return view('admin.dashboard'); });
 Route::get('/admin/news', function () { return view('admin.news-manage'); });
 Route::get('/admin/categories', function () { return view('admin.categories-manage'); });
 
-
 /*
 |--------------------------------------------------------------------------
 | RUTE BACKEND API (Prefix: /api)
@@ -45,9 +44,12 @@ Route::prefix('api')->group(function () {
     Route::get('/news', [NewsController::class, 'index']);
     Route::get('/news/{id}', [NewsController::class, 'show']);
 
+<<<<<<< HEAD
     Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
     Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
+=======
+>>>>>>> 56ce0f7ee8fabcdabdd13479c79f5f92c4ff900b
     // 2. RUTE PRIVAT (Wajib login & membawa token manual lewat HTTP Header)
     Route::middleware(['manual.auth'])->group(function () {
         
