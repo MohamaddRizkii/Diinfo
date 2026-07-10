@@ -14,12 +14,20 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. BUAT AKUN ADMIN UTAMA
+        // 1. BUAT AKUN ADMIN UTAMA dan pengguna
         $admin = User::create([
             'name' => 'Admin', 
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
             'role' => 'admin',
+        ]);
+
+        // akun pengguna
+        $user = User::create([
+            'name' => 'Pengguna',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('user123'),
+            'role' => 'user',
         ]);
 
         // 2. LOGIKA OTOMATISASI FOLDER IMAGE THUMBNAIL
