@@ -140,7 +140,7 @@ Antarmuka aplikasi dibuat sederhana dan mudah digunakan, namun masih dapat dikem
 Buka terminal atau Command Prompt, lalu masuk ke folder proyek yang sudah di-*clone*.
 
 ```bash
-cd nama-folder-proyek
+cd Diinfo
 ```
 
 #### 2. Install Dependency
