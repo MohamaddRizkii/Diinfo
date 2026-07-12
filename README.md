@@ -54,7 +54,51 @@ Proyek menyediakan seeder untuk mengisi data awal seperti kategori dan beberapa 
 
 ---
 
-##  4. Kelebihan Proyek yang Dibangun
+# 4. Dokumentasi Aplikasi
+
+Berikut merupakan beberapa tampilan antarmuka (User Interface) dari aplikasi **Diinfo**.
+
+## Halaman Login
+
+![Halaman Login](Dokumentasi/Login.png)
+
+---
+
+## Halaman Register
+
+![Halaman Register](Dokumentasi/Register.png)
+
+---
+
+## Homepage
+
+![Homepage](Dokumentasi/Homepage.png)
+
+---
+
+## Detail Berita
+
+![Detail Berita](Dokumentasi/Detail-berita.png)
+
+---
+
+## Dashboard Admin
+
+![Dashboard Admin](Dokumentasi/Dashboard-Admin.png)
+
+---
+
+## Kelola Artikel Berita
+
+![Kelola Artikel](Dokumentasi/Kelola-artikel,berita.png)
+
+---
+
+## Kelola Kategori
+
+![Kelola Kategori](Dokumentasi/Kelola-Kategori.png)
+
+##  5. Kelebihan Proyek yang Dibangun
 * **Backend dan Frontend dalam Satu Proyek**
 Aplikasi dibangun menggunakan Laravel dengan backend API dan tampilan frontend yang saling terhubung dalam satu proyek sehingga proses pengembangan menjadi lebih sederhana dan mudah dipelajari.
 * **Antarmuka yang Sederhana dan Mudah Digunakan**
@@ -70,7 +114,7 @@ Kode aplikasi disusun secara terstruktur sehingga memudahkan proses pemeliharaan
 
 ---
 
-##  5. Kekurangan Proyek yang Dibangun (Bug / Warning / Limitasi)
+##  6. Kekurangan Proyek yang Dibangun (Bug / Warning / Limitasi)
 * **Fitur trending yang belum selesai**
 * **Fitur Masih Sederhana**
 Aplikasi masih berfokus pada fitur utama portal berita seperti pengelolaan berita, kategori, dan komentar. Beberapa fitur pendukung masih belum tersedia.
@@ -89,7 +133,7 @@ Antarmuka aplikasi dibuat sederhana dan mudah digunakan, namun masih dapat dikem
 
 ---
 
-### Langkah Instalasi
+### 7. Langkah Instalasi
 
 #### 1. Masuk ke Folder Proyek
 
@@ -180,7 +224,7 @@ http://localhost:8000
 
 ---
 
-## AKUN DEMO
+## 8. AKUN DEMO
 ### Admin
 - Email: admin@gmail.com
 - Password: admin123
